@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
-import Joi from 'joi'
+import * as dotenv from 'dotenv'
+import * as Joi from 'joi'
 
 dotenv.config()
 
