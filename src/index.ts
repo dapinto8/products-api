@@ -1,6 +1,6 @@
 import {loadConfig} from './infrastructure/config'
-import {loadWebServer} from './infrastructure/server/server'
 import {loadDBConnection} from './infrastructure/db'
+import {loadWebServer} from './server'
 
 async function main() {
   const appConfig = loadConfig()
