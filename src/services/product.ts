@@ -5,10 +5,15 @@ import {ProductRepository} from '@core/interfaces/product-repository'
 import {QueryBuilder} from '@core/interfaces/query-builder'
 
 export class ProductService {
+  discount: number
+
   constructor(
     private readonly productRepository: ProductRepository,
-    private readonly productQueryBuilder: QueryBuilder
-  ) {}
+    private readonly productQueryBuilder: QueryBuilder,
+    discount: number
+  ) {
+    this.discount = discount
+  }
 
   private checkPalidrome(text: string | undefined): boolean {
     if (!text) return false
@@ -22,8 +27,8 @@ export class ProductService {
     return product.map(product => {
       return {
         ...product,
-        price: product.price * 0.5,
-        discount: 0.5
+        price: product.price * this.discount,
+        discount: this.discount
       }
     })
   }

@@ -1,7 +1,8 @@
 import {Query} from '@core/entities/query'
 import {QueryBuilder} from '@core/interfaces/query-builder'
+import {MongooseQuery} from '../mongoose-query'
 
-export class ProductQueryBuilder implements QueryBuilder {
+export class MongooseProductQueryBuilder implements QueryBuilder {
   private getSearch(text: string) {
     const regex = new RegExp(text, 'i')
     return {$or: [{brand: regex}, {description: regex}]}
@@ -22,14 +23,14 @@ export class ProductQueryBuilder implements QueryBuilder {
     }
   }
 
-  buildQuery(query: Query): any {
-    const mongooseQuery: any = {}
-
-    mongooseQuery.filterQuery = this.getSearch(query.search)
-    mongooseQuery.sort = this.getSort(query.sort)
-    mongooseQuery.skip = (query.page - 1) * query.pageSize
-    mongooseQuery.limit = Number(query.pageSize)
-
+  buildQuery(query: Query): MongooseQuery {
+    const mongooseQuery: MongooseQuery = {
+      filterQuery: this.getSearch(query.search),
+      sort: this.getSort(query.sort),
+      skip: (query.page - 1) * query.pageSize,
+      limit: Number(query.pageSize)
+    }
+    
     return mongooseQuery
   }
 }
