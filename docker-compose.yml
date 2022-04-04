@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  db:
+    image: mongo
+    networks:
+      - main-network
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - main-network
+    command: npm run dev
+    ports:
+      - 5500:5500
+    volumes:
+      - .:/usr/src/api
+      - /usr/src/api/node_modules
+    depends_on:
+      - db
+
+networks:
+  main-network:
