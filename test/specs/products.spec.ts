@@ -59,4 +59,14 @@ describe('Test ProductsService', () => {
     expect(products.data[0].price).not.toBe(product.price * 0.5)
     expect(products.data[0].price).toBe(product.price)
   })
+
+  it('should check empty data', async () => {
+    const query = new Query({
+      search: '5000',
+      page: 1,
+      pageSize: 10
+    })
+    const products = await productService.getProducts(query)
+    expect(products.data.length).toBe(0)
+  })
 })

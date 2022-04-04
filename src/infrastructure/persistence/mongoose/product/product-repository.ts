@@ -4,9 +4,11 @@ import {ProductModel} from './product-model'
 import {MongooseQuery} from '@infra/persistence/mongoose/mongoose-query'
 
 export class MongooseProductRepository implements ProductRepository<MongooseQuery> {
-  async findById(id: number): Promise<Product> {
+  async findById(id: number): Promise<Product | null> {
     try {
       const product = await ProductModel.findOne({id})
+      if (!product) return null
+
       return new Product(product)
     } catch (error) {
       throw error

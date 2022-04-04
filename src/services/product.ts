@@ -39,7 +39,8 @@ export class ProductService<Q> {
     // Check if search text is an id and get product by id
     if (!!Number(searchText)) {
       const product = await this.productRepository.findById(Number(searchText))
-      return new PaginatedData<Product>(query, 1, [product])
+      const data = product ? [product] : []
+      return new PaginatedData<Product>(query, 1, data)
     }
 
     const productsQuery = this.productQueryBuilder.buildQuery(query)
