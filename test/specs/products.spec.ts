@@ -2,12 +2,13 @@ import {Query} from '@core/entities/query'
 import {MockProductRepository} from '@test/mocks/mock-product-repository'
 import {MockProductQueryBuilder} from '@test/mocks/mock-product-query-builder'
 import {ProductService} from '@services/product'
+import {MockQuery} from '@test/mocks/mock-query'
 import productsFixture from '@test/fixtures/products.json'
 
 describe('Test ProductsService', () => {
   const productQueryBuilder = new MockProductQueryBuilder()
   const productsRepository = new MockProductRepository()
-  const productService = new ProductService(productsRepository, productQueryBuilder, 0.5)
+  const productService = new ProductService<MockQuery>(productsRepository, productQueryBuilder, 0.5)
 
   it('should check that products are 50 percent off when searching with a palindrome', async () => {
     const query = new Query({

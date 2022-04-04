@@ -1,8 +1,8 @@
 import {Query} from '@core/entities/query'
 import {QueryBuilder} from '@core/interfaces/query-builder'
-import {MongooseQuery} from '../mongoose-query'
+import {MongooseQuery} from '@infra/persistence/mongoose/mongoose-query'
 
-export class MongooseProductQueryBuilder implements QueryBuilder {
+export class MongooseProductQueryBuilder implements QueryBuilder<MongooseQuery> {
   private getSearch(text: string) {
     const regex = new RegExp(text, 'i')
     return {$or: [{brand: regex}, {description: regex}]}

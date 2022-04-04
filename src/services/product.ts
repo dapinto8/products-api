@@ -1,15 +1,15 @@
-import { PaginatedData } from '@core/entities/paginated-data'
+import {PaginatedData} from '@core/entities/paginated-data'
 import {Product} from '@core/entities/product'
 import {Query} from '@core/entities/query'
 import {ProductRepository} from '@core/interfaces/product-repository'
 import {QueryBuilder} from '@core/interfaces/query-builder'
 
-export class ProductService {
+export class ProductService<Q> {
   discount: number
 
   constructor(
-    private readonly productRepository: ProductRepository,
-    private readonly productQueryBuilder: QueryBuilder,
+    private readonly productRepository: ProductRepository<Q>,
+    private readonly productQueryBuilder: QueryBuilder<Q>,
     discount: number
   ) {
     this.discount = discount
@@ -39,7 +39,7 @@ export class ProductService {
     // Check if search text is an id and get product by id
     if (!!Number(searchText)) {
       const product = await this.productRepository.findById(Number(searchText))
-      return new PaginatedData<Product>(query, 1, [product]) 
+      return new PaginatedData<Product>(query, 1, [product])
     }
 
     const productsQuery = this.productQueryBuilder.buildQuery(query)

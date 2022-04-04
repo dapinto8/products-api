@@ -3,7 +3,7 @@ import {ProductRepository} from '@core/interfaces/product-repository'
 import {MockQuery} from './mock-query'
 import productsFixture from '@test/fixtures/products.json'
 
-export class MockProductRepository implements ProductRepository {
+export class MockProductRepository implements ProductRepository<MockQuery> {
   private products: Product[] = productsFixture
 
   constructor() {}

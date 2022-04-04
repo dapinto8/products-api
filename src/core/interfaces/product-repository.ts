@@ -1,6 +1,4 @@
-import {Product} from '@core/entities/product';
+import {Product} from '@core/entities/product'
+import {GenericRepository} from '@core/interfaces/generic-repository'
 
-export interface ProductRepository {
-  findById(id: number): Promise<Product>;
-  findAll(query: any): Promise<[Product[], number]>;
-}
+export interface ProductRepository<Q> extends GenericRepository<Product, Q> {}

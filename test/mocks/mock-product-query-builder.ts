@@ -2,7 +2,7 @@ import {Query} from '@core/entities/query'
 import {QueryBuilder} from '@core/interfaces/query-builder'
 import {MockQuery} from './mock-query'
 
-export class MockProductQueryBuilder implements QueryBuilder {
+export class MockProductQueryBuilder implements QueryBuilder<MockQuery> {
   buildQuery(query: Query): MockQuery {
     const mockQuery: MockQuery = {
       search: {

@@ -3,7 +3,7 @@ import {Product} from '@core/entities/product'
 import {ProductModel} from './product-model'
 import {MongooseQuery} from '@infra/persistence/mongoose/mongoose-query'
 
-export class MongooseProductRepository implements ProductRepository {
+export class MongooseProductRepository implements ProductRepository<MongooseQuery> {
   async findById(id: number): Promise<Product> {
     try {
       const product = await ProductModel.findOne({id})
