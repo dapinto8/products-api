@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "0af9441a-c0e1-47e1-ba57-54753f7f9502",
+		"name": "Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get products using palindrome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5500/api/products?search=adda&page=1&pageSize=10&sort=price_asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5500",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "adda"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "price_asc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/products?search=adda&page=1&pageSize=10&sort=price_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "adda"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "price_asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1540"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Apr 2022 19:25:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1449,\n            \"brand\": \"adda\",\n            \"description\": \"owyh xñuqeyti\",\n            \"image\": \"www.lider.cl/catalogo/images/whiteLineIcon.svg\",\n            \"price\": 318.5,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 118,\n            \"brand\": \"saddas\",\n            \"description\": \"ñqmj ikqvslvq\",\n            \"image\": \"www.lider.cl/catalogo/images/electronicsIcon.svg\",\n            \"price\": 15274,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 754,\n            \"brand\": \"saddas\",\n            \"description\": \"axgh ocayamle\",\n            \"image\": \"www.lider.cl/catalogo/images/furnitureIcon.svg\",\n            \"price\": 21175,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 1015,\n            \"brand\": \"adda\",\n            \"description\": \"znxnñm wymew\",\n            \"image\": \"www.lider.cl/catalogo/images/bedRoomIcon.svg\",\n            \"price\": 41040.5,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 192,\n            \"brand\": \"saddas\",\n            \"description\": \"qrñfsf avzim\",\n            \"image\": \"www.lider.cl/catalogo/images/babyIcon.svg\",\n            \"price\": 89866.5,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 63,\n            \"brand\": \"saddas\",\n            \"description\": \"wbwym yzgjip\",\n            \"image\": \"www.lider.cl/catalogo/images/bicycleIcon.svg\",\n            \"price\": 100161,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 2957,\n            \"brand\": \"saddas\",\n            \"description\": \"eruwk bvnñgc\",\n            \"image\": \"www.lider.cl/catalogo/images/computerIcon.svg\",\n            \"price\": 100314,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 2816,\n            \"brand\": \"saddas\",\n            \"description\": \"fmurm kgyict\",\n            \"image\": \"www.lider.cl/catalogo/images/whiteLineIcon.svg\",\n            \"price\": 135595.5,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 1209,\n            \"brand\": \"saddas\",\n            \"description\": \"zmllgz rexdg\",\n            \"image\": \"www.lider.cl/catalogo/images/computerIcon.svg\",\n            \"price\": 143265.5,\n            \"discount\": 0.5\n        },\n        {\n            \"id\": 2197,\n            \"brand\": \"saddas\",\n            \"description\": \"uymgk ñqrswx\",\n            \"image\": \"www.lider.cl/catalogo/images/electronicsIcon.svg\",\n            \"price\": 167164.5,\n            \"discount\": 0.5\n        }\n    ],\n    \"total\": 23,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 3,\n    \"previousPage\": null,\n    \"nextPage\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Get product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5500/api/products?search=180",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5500",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "180"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/products?search=180",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "180"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Apr 2022 19:27:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 180,\n            \"brand\": \"ontuhwztz\",\n            \"description\": \"wbwym yzgjip\",\n            \"image\": \"www.lider.cl/catalogo/images/bedRoomIcon.svg\",\n            \"price\": 738158\n        }\n    ],\n    \"total\": 1,\n    \"page\": null,\n    \"pageSize\": null,\n    \"totalPages\": null,\n    \"previousPage\": null,\n    \"nextPage\": null\n}"
+				},
+				{
+					"name": "200 empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/products?search=5000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "5000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Apr 2022 19:40:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [],\n    \"total\": 1,\n    \"page\": null,\n    \"pageSize\": null,\n    \"totalPages\": null,\n    \"previousPage\": null,\n    \"nextPage\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get products by search text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5500/api/products?search=add&page=1&pageSize=10&sort=price_asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5500",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "add"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "price_asc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/products?search=asdfqw&page=1&pageSize=10&sort=price_asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "asdfqw"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "price_asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Apr 2022 19:40:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [],\n    \"total\": 0,\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 0,\n    \"previousPage\": null,\n    \"nextPage\": null\n}"
+				}
+			]
+		}
+	]
+}
